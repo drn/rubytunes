@@ -73,9 +73,11 @@ Initialization defaults to the current track:
 ```ruby
 track = RubyTunes::Track.new
 ```
-However, you can retrieve a track by ID:
+A track can be initialized by id, name, or direct reference:
 ```ruby
-track = RubyTunes::Track.new('63E93B27B3F0E5A7')
+track = RubyTunes::Track.new(id: '63E93B27B3F0E5A7')
+track = RubyTunes::Track.new(name: 'LIC Adventure Club Mix')
+track = RubyTunes::Track.new(reference: 'some track')
 ```
 
 Properties:

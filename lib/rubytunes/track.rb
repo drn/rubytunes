@@ -3,11 +3,23 @@ require 'rubytunes/base'
 class RubyTunes
   class Track < Base
 
-    def initialize(id=nil)
-      @id = id
+    def self.random
+      self.new(reference: 'some track')
+    end
+
+    # Defaults to the current track
+    # @param info [Hash] (optional)
+    #   {
+    #     id:         String, (optional)
+    #     name:       String, (optional)
+    #     reference:  String  (optional)
+    #   }
+    def initialize(info={})
+      @info = info
     end
 
     def name; run :name end
+
     def id; run 'persistent id' end
 
   private
@@ -17,13 +29,19 @@ class RubyTunes
     end
 
     def track
-      @track ||= (
-        if @id.nil?
-          'current track'
-        else
-          "some track of library playlist 1 whose persistent id is \"#{@id}\""
-        end
-      )
+      track_by_id || track_by_name || track_by_reference
+    end
+
+    def track_by_id
+      @info[:id] && "some track whose persistent id is \"#{@info[:id]}\""
+    end
+
+    def track_by_name
+      @info[:name] && "some track whose name is \"#{@info[:name]}\""
+    end
+
+    def track_by_reference
+      @info[:reference] || 'current track'
     end
 
   end
