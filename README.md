@@ -50,6 +50,8 @@ Basic controls:
 playback.play
 playback.pause
 playback.stop
+playback.next
+playback.previous
 ```
 
 Toggle playback (pause / play)
