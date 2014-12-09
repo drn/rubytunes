@@ -1,4 +1,6 @@
 # RubyTunes
+[![Gem Version](https://badge.fury.io/rb/rubytunes.svg)](http://badge.fury.io/rb/rubytunes)
+[![Code Climate](https://codeclimate.com/github/drn/rubytunes/badges/gpa.svg)](https://codeclimate.com/github/drn/rubytunes)
 
 **RubyTunes** provides a simple ruby interface to iTunes in OS X.
 
