@@ -1,29 +1,13 @@
-# RubyTunes
+## RubyTunes
 
-TODO: Write a gem description
+Programmatically control iTunes via Ruby.
 
-## Installation
+### Installation
 
 Add this line to your application's Gemfile:
 
-    gem 'ruby_tunes'
+    gem 'rubytunes'
 
-And then execute:
-
-    $ bundle
-
-Or install it yourself as:
+Or install the CLI:
 
     $ gem install ruby_tunes
-
-## Usage
-
-TODO: Write usage instructions here
-
-## Contributing
-
-1. Fork it ( https://github.com/[my-github-username]/ruby_tunes/fork )
-2. Create your feature branch (`git checkout -b my-new-feature`)
-3. Commit your changes (`git commit -am 'Add some feature'`)
-4. Push to the branch (`git push origin my-new-feature`)
-5. Create a new Pull Request
