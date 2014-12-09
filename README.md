@@ -18,7 +18,7 @@ Add this line to your application's Gemfile:
 
 Or install the CLI:
 
-    $ gem install ruby_tunes
+    $ gem install rubytunes
 
 ## Contents
 
