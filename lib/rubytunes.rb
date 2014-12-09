@@ -1,6 +1,10 @@
 require 'rubytunes/version'
 require 'rubytunes/playback'
 
-module RubyTunes
+class RubyTunes
+
+  def playback
+    @playback ||= RubyTunes::Playback.new
+  end
 
 end

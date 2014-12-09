@@ -1,4 +1,4 @@
-module RubyTunes
+class RubyTunes
   class Base
 
   private

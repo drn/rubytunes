@@ -1,6 +1,6 @@
 require 'rubytunes/base'
 
-module RubyTunes
+class RubyTunes
   class Playback < Base
 
     def play; run :play end
