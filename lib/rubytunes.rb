@@ -1,5 +1,6 @@
 require 'rubytunes/version'
 require 'rubytunes/playback'
+require 'rubytunes/track'
 
 class RubyTunes
 

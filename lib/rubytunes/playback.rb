@@ -11,5 +11,9 @@ class RubyTunes
     def previous; run 'previous track' end
     def state; run 'player state' end
 
+    def track
+      @track ||= RubyTunes::Track.new
+    end
+
   end
 end

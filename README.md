@@ -23,6 +23,7 @@ Or install the CLI:
 * [1. Usage](#1-usage)
 * [2. Interface](#2-interface)
   * [2.1 Playback](#21-playback)
+  * [2.2 Track](#22-track)
 
 ## 1. Usage
 
@@ -64,9 +65,22 @@ State:
 playback.state # => 'playing', 'paused', or 'stopped'
 ```
 
-### 2.2 Library
+### 2.2 Track
 
-*Coming Soon*
+Initialization defaults to the current track:
+```ruby
+track = RubyTunes::Track.new
+```
+However, you can retrieve a track by ID:
+```ruby
+track = RubyTunes::Track.new('63E93B27B3F0E5A7')
+```
+
+Properties:
+```ruby
+track.id # => '63E93B27B3F0E5A7'
+track.name # => 'LIC Adventure Club Mix'
+```
 
 ### 2.3 Search
 
