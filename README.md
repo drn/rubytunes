@@ -45,11 +45,16 @@ or through the a base **RubyTunes** instance:
 playback = RubyTunes.new.playback
 ```
 
-Controls:
+Basic controls:
 ```ruby
 playback.play
 playback.pause
 playback.stop
+```
+
+Toggle playback (pause / play)
+```ruby
+playback.toggle
 ```
 
 State:

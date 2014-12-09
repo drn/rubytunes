@@ -6,6 +6,7 @@ module RubyTunes
     def play; run :play end
     def pause; run :pause end
     def stop; run :stop end
+    def toggle; run :playpause end
     def state; run 'player state' end
 
   end

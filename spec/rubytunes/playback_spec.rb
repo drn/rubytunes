@@ -23,6 +23,11 @@ RSpec.describe RubyTunes::Playback do
         expect { playback.stop }.to change { playback.state }.to 'stopped'
       end
     end
+    context 'toggle' do
+      it 'should toggle' do
+        expect { playback.toggle }.to change { playback.state }.to 'paused'
+      end
+    end
   end
 
 end
