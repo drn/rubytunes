@@ -67,6 +67,13 @@ State:
 playback.state # => 'playing', 'paused', or 'stopped'
 ```
 
+Position:
+```ruby
+playback.position # => 100.00
+playback.position = 100.0
+```
+
+
 ### 2.2 Track
 
 Initialization defaults to the current track:

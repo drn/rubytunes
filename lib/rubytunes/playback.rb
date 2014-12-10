@@ -10,6 +10,8 @@ class RubyTunes
     def next; run 'next track' end
     def previous; run 'previous track' end
     def state; run 'player state' end
+    def position; run 'player position' end
+    def position=(position); run "set player position to #{position}" end
 
   end
 end
