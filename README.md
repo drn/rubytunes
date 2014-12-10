@@ -102,9 +102,10 @@ RubyTunes::Item.new
 ```
 An item can be initialized by id, name, or direct reference:
 ```ruby
-RubyTunes::Item.new(id: '63E93B27B3F0E5A7')
-RubyTunes::Item.new(name: 'Item Name')
-RubyTunes::Item.new(reference: 'some item')
+RubyTunes::Item.find('63E93B27B3F0E5A7')
+RubyTunes::Item.find_by_id('63E93B27B3F0E5A7')
+RubyTunes::Item.find_by_name('Item Name')
+RubyTunes::Item.find_by_reference('some item')
 ```
 
 Properties:
@@ -125,7 +126,7 @@ fade.out  # => fades to 0% volume
 
 Transition to track:
 ```ruby
-track = RubyTunes::Track.new(name: 'Nightcall')
+track = RubyTunes::Track.find_by_name('Nightcall')
 RubyTunes.new.transition.to(track)
 ```
 

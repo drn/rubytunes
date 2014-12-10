@@ -4,22 +4,27 @@ require 'rubytunes/property'
 class RubyTunes
   class Item < Base
 
-    def self.properties
-      {
-        id:   Property.new(name: 'persistent id', type: :string),
-        name: Property.new(name: 'name',          type: :string)
-      }
-    end
+    class << self
 
-    def self.define_properties
-      self.properties.each do |name, property|
-        self.instance_eval do
-          define_method(name) { send(property.type, property.name) }
+      def properties
+        {
+          id:   Property.new(name: 'persistent id', type: :string),
+          name: Property.new(name: 'name',          type: :string)
+        }
+      end
+
+      def define_properties
+        self.properties.each do |name, property|
+          self.instance_eval do
+            define_method(name) { send(property.type, property.name) }
+          end
         end
       end
-    end
 
-    class << self
+      def find_by_id(id); new(id: id) end
+      alias_method :find, :find_by_id
+      def find_by_reference(reference); new(reference: reference) end
+      def find_by_name(name); new(name: name) end
 
       def all
         # TODO
@@ -39,8 +44,8 @@ class RubyTunes
     #     name:       String, (optional)
     #     reference:  String  (optional)
     #   }
-    def initialize(info={})
-      @info = info
+    def initialize(params={})
+      @params = params
       raise_if_superclass
     end
 
@@ -66,15 +71,15 @@ class RubyTunes
     end
 
     def by_id
-      @info[:id] && "some #{type} whose persistent id is \"#{@info[:id]}\""
+      @params[:id] && "some #{type} whose persistent id is \"#{@params[:id]}\""
     end
 
     def by_name
-      @info[:name] && "some #{type} whose name is \"#{@info[:name]}\""
+      @params[:name] && "some #{type} whose name is \"#{@params[:name]}\""
     end
 
     def by_reference
-      @info[:reference] || "current #{type}"
+      @params[:reference] || "current #{type}"
     end
 
   end
