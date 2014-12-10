@@ -5,13 +5,18 @@ class RubyTunes
   class Track < Item
     include Utilities::DateTime
 
-    def duration; property :duration end
-    def artist; property :artist end
-    def album; property :album end
-    def played_count; property 'played count' end
-    def played_at; parse_datetime(property 'played date') end
-    def created_at; parse_datetime(property 'date added') end
-    def bit_rate; property 'bit rate' end
+    def self.properties
+      super().merge(
+        duration:     Property.new(name: 'duration',     type: :float),
+        artist:       Property.new(name: 'artist',       type: :string),
+        album:        Property.new(name: 'album',        type: :string),
+        played_count: Property.new(name: 'played count', type: :integer),
+        played_at:    Property.new(name: 'played date',  type: :datetime),
+        created_at:   Property.new(name: 'date added',   type: :datetime),
+        bitrate:      Property.new(name: 'bit rate',     type: :integer)
+      )
+    end
+    define_properties
 
   end
 end
