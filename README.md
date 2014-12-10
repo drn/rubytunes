@@ -25,7 +25,7 @@ Or install the CLI:
 * [1. Usage](#1-usage)
 * [2. Interface](#2-interface)
   * [2.1 Playback](#21-playback)
-  * [2.2 Track](#22-track)
+  * [2.2 Item](#22-item)
 
 ## 1. Usage
 
@@ -41,11 +41,11 @@ rubytunes = RubyTunes.new
 
 Can be either instantiated as a standalone class:
 ```ruby
-playback = RubyTunes::Playback.new
+RubyTunes::Playback.new
 ```
 or through the a base **RubyTunes** instance:
 ```ruby
-playback = RubyTunes.new.playback
+RubyTunes.new.playback
 ```
 
 Basic controls:
@@ -74,23 +74,36 @@ playback.position = 100.0
 ```
 
 
-### 2.2 Track
+### 2.2 Item
 
-Initialization defaults to the current track:
+RubyTunes defines multiple iTunes items that can be manipulated through a
+consistent interface.
+
+Defined items:
 ```ruby
-track = RubyTunes::Track.new
+RubyTunes::Track.new
+RubyTunes::Playlist.new
 ```
-A track can be initialized by id, name, or direct reference:
+
+**Note:** For the purposes of this example, `RubyTunes::Item` will be used.
+However, direct instantiation of this class will result in an exception. Only
+subclasses of `RubyTunes::Item` may be instantiatied.
+
+Initialization defaults to the current item:
 ```ruby
-track = RubyTunes::Track.new(id: '63E93B27B3F0E5A7')
-track = RubyTunes::Track.new(name: 'LIC Adventure Club Mix')
-track = RubyTunes::Track.new(reference: 'some track')
+RubyTunes::Item.new
+```
+An item can be initialized by id, name, or direct reference:
+```ruby
+RubyTunes::Item.new(id: '63E93B27B3F0E5A7')
+RubyTunes::Item.new(name: 'Item Name')
+RubyTunes::Item.new(reference: 'some item')
 ```
 
 Properties:
 ```ruby
-track.id # => '63E93B27B3F0E5A7'
-track.name # => 'LIC Adventure Club Mix'
+item.id   # => '63E93B27B3F0E5A7'
+item.name # => 'Item Name'
 ```
 
 ### 2.3 Search

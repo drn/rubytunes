@@ -1,7 +1,7 @@
 require 'rubytunes/item'
 
 class RubyTunes
-  class Track < Item
+  class Playlist < Item
 
   end
 end
