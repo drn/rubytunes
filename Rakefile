@@ -9,6 +9,7 @@ task :console do
     files.each { |file| load file }
   end
 
+  ENV['PROMPT_NAME'] = 'RubyTunes'
   ARGV.clear
   Pry.start
 end
