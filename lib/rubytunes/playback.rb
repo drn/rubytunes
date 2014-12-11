@@ -4,7 +4,7 @@ class RubyTunes
   class Playback < Base
 
     # state
-    def play; run :play end
+    def play(track=nil); run "play #{track}" end
     def pause; run :pause end
     def stop; run :stop end
     def rewind; run :rewind end

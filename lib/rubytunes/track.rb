@@ -18,5 +18,15 @@ class RubyTunes
     end
     define_properties
 
+    def play; playback.play(self) end
+
+    def to_s; reference end
+
+    def current?; RubyTunes::Track.new.id == self.id end
+
+  private
+
+    def playback; @playback ||= RubyTunes::Playback.new end
+
   end
 end
