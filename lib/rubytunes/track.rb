@@ -6,7 +6,7 @@ class RubyTunes
     include Utilities::DateTime
 
     def self.properties
-      super().merge(
+      @@properties ||= super().merge(
         duration:     Property.new(name: 'duration',     type: :float),
         artist:       Property.new(name: 'artist',       type: :string),
         album:        Property.new(name: 'album',        type: :string),
