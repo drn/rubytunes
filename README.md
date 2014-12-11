@@ -123,6 +123,13 @@ fade.in   # => fades to 100% volume
 fade.out  # => fades to 0% volume
 ```
 
+Transition to track:
+```ruby
+track = RubyTunes::Track.new(name: 'Nightcall')
+RubyTunes.new.transition.to(track)
+```
+
+
 ### 2.4 Search
 
 *Coming Soon*

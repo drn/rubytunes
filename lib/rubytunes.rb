@@ -3,11 +3,13 @@ require 'rubytunes/playback'
 require 'rubytunes/track'
 require 'rubytunes/playlist'
 require 'rubytunes/fade'
+require 'rubytunes/transition'
 
 class RubyTunes
 
   def playback; @playback ||= RubyTunes::Playback.new end
   def fade; @fade ||= RubyTunes::Fade.new end
+  def transition; @transition ||= RubyTunes::Transition.new end
 
   def track; RubyTunes::Track.new end
   def tracks; RubyTunes::Track.all end
