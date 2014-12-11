@@ -5,8 +5,11 @@ task :console do
   require 'rubytunes'
 
   def reload!
+    puts 'Reloading...'
+    Object.send(:remove_const, :RubyTunes)
     files = $LOADED_FEATURES.select { |feat| feat =~ /\/rubytunes\// }
     files.each { |file| load file }
+    true
   end
 
   ENV['PROMPT_NAME'] = 'RubyTunes'
