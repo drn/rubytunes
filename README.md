@@ -124,3 +124,18 @@ item.name # => 'Item Name'
 ### Depedencies
 
 This API is dependent on `osascript`.
+
+### Development
+
+Development console:
+```
+$ rake console
+$ rake c
+```
+
+Reload rubytunes source during development:
+```
+$ reload!
+Reloading...
+true
+```
