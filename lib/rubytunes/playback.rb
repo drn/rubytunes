@@ -20,7 +20,7 @@ class RubyTunes
     def position=(position); run "set player position to #{position}" end
 
     # volume
-    def volume; run 'sound volume' end
+    def volume; run('sound volume').to_i end
     def volume=(volume); run "set sound volume to #{volume}" end
 
   end

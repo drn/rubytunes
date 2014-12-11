@@ -26,6 +26,7 @@ Or install the CLI:
 * [2. Interface](#2-interface)
   * [2.1 Playback](#21-playback)
   * [2.2 Item](#22-item)
+  * [2.3 Effects](#22-effects)
 
 ## 1. Usage
 
@@ -80,7 +81,6 @@ playback.volume # => 100
 playback.volume = 100
 ```
 
-
 ### 2.2 Item
 
 RubyTunes defines multiple iTunes items that can be manipulated through a
@@ -113,11 +113,21 @@ item.id   # => '63E93B27B3F0E5A7'
 item.name # => 'Item Name'
 ```
 
-### 2.3 Search
+### 2.3 Effects
+
+Fade volume:
+```ruby
+fade = RubyTunes.new.fade
+fade = RubyTunes::Fade.new
+fade.in   # => fades to 100% volume
+fade.out  # => fades to 0% volume
+```
+
+### 2.4 Search
 
 *Coming Soon*
 
-### 2.4 Manipulation
+### 2.5 Manipulation
 
 *Coming Soon*
 
