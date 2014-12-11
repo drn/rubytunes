@@ -53,6 +53,7 @@ Basic controls:
 playback.play
 playback.pause
 playback.stop
+playback.rewind
 playback.next
 playback.previous
 ```
@@ -64,13 +65,19 @@ playback.toggle
 
 State:
 ```ruby
-playback.state # => 'playing', 'paused', or 'stopped'
+playback.state # => 'playing', 'paused', 'rewinding', or 'stopped'
 ```
 
 Position:
 ```ruby
 playback.position # => 100.00
 playback.position = 100.0
+```
+
+Volume:
+```ruby
+playback.volume # => 100
+playback.volume = 100
 ```
 
 
