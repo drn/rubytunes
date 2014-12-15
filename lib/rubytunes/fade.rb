@@ -3,22 +3,27 @@ require 'rubytunes/playback'
 class RubyTunes
   class Fade
 
+    INCREMENT = 5
+
     def in
-      while (current ||= playback.volume) < 100
-        current += 5
-        playback.volume = current
+      while (current ||= volume) < 100
+        self.volume = (current += INCREMENT)
       end
     end
 
     def out
-      while (current ||= playback.volume) > 0
-        current -= 5
-        playback.volume = current
+      while (current ||= volume) > 0
+        self.volume = (current -= INCREMENT)
       end
     end
 
   private
 
+    def volume; playback.volume end
+
+    def volume=(volume); playback.volume = volume end
+
     def playback; @playback ||= RubyTunes::Playback.new end
+
   end
 end
