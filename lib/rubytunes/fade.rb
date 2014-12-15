@@ -5,7 +5,6 @@ class RubyTunes
 
     def in
       while (current ||= playback.volume) < 100
-        puts current
         current += 5
         playback.volume = current
       end
@@ -13,7 +12,6 @@ class RubyTunes
 
     def out
       while (current ||= playback.volume) > 0
-        puts current
         current -= 5
         playback.volume = current
       end
@@ -21,9 +19,6 @@ class RubyTunes
 
   private
 
-    def playback
-      @playback ||= RubyTunes::Playback.new
-    end
-
+    def playback; @playback ||= RubyTunes::Playback.new end
   end
 end
