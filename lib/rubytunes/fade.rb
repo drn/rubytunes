@@ -5,6 +5,8 @@ class RubyTunes
 
     INCREMENT = 5
 
+    def toggle; volume > 0 ? self.out : self.in end
+
     def in
       while (current ||= volume) < 100
         self.volume = (current += INCREMENT)
