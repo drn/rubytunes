@@ -16,7 +16,7 @@ class RubyTunes
     def previous; run 'previous track' end
 
     # position
-    def position; run 'player position' end
+    def position; run('player position').to_f end
     def position=(position); run "set player position to #{position}" end
 
     # volume

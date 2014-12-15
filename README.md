@@ -71,8 +71,10 @@ playback.state # => 'playing', 'paused', 'rewinding', or 'stopped'
 
 Position:
 ```ruby
-playback.position # => 100.00
-playback.position = 100.0
+playback.position => 100.00 # current position
+playback.position = 100.0   # set position
+playback.position += 10.0   # move 10 seconds forward
+playback.position -= 10.0   # move 10 seconds back
 ```
 
 Volume:
