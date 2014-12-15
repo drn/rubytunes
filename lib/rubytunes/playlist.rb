@@ -9,5 +9,11 @@ class RubyTunes
     end
     define_properties
 
+    def tracks
+      value('persistent id of tracks').split(', ').map do |id|
+        RubyTunes::Track.find(id)
+      end
+    end
+
   end
 end
