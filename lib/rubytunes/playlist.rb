@@ -15,5 +15,8 @@ class RubyTunes
       end
     end
 
+    def play(number=nil)
+      run "play #{number && "track #{number} of"} #{reference}"
+    end
   end
 end
