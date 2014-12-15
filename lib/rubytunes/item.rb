@@ -75,7 +75,7 @@ class RubyTunes
     end
 
     def by_name
-      @params[:name] && "some #{type} whose name is \"#{@params[:name]}\""
+      @params[:name] && "#{type} \"#{@params[:name]}\""
     end
 
     def by_reference
