@@ -51,6 +51,14 @@ class RubyTunes
 
     def type; self.class.type end
 
+    def properties
+      properties = {}
+      self.class.properties.each do |key, value|
+        properties[key] = self.send(key)
+      end
+      properties
+    end
+
   private
 
     def raise_if_superclass
