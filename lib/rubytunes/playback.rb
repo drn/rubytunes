@@ -1,7 +1,7 @@
-require 'rubytunes/base'
+require 'rubytunes/script'
 
 class RubyTunes
-  class Playback < Base
+  class Playback
 
     # state
     def play(track=nil); run "play #{track}" end
@@ -22,6 +22,10 @@ class RubyTunes
     # volume
     def volume; run('sound volume').to_i end
     def volume=(volume); run "set sound volume to #{volume}" end
+
+  private
+
+    def run(command); Script.run(command) end
 
   end
 end

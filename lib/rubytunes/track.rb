@@ -1,3 +1,4 @@
+require 'rubytunes/script'
 require 'rubytunes/item'
 require 'rubytunes/utilities/datetime'
 
@@ -17,6 +18,18 @@ class RubyTunes
       )
     end
     define_properties
+
+    class << self
+
+      def search(query)
+        Script.run(
+          'persistent id of tracks whose ' +
+          ' name contains "' + query + '"' +
+          ' or artist contains "' + query + '"'
+        ).split(', ').map { |id| self.new(id: id) }
+      end
+
+    end
 
     def play; playback.play(self) end
 

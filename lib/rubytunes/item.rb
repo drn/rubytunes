@@ -1,8 +1,8 @@
-require 'rubytunes/base'
 require 'rubytunes/property'
+require 'rubytunes/script'
 
 class RubyTunes
-  class Item < Base
+  class Item
 
     class << self
 
@@ -59,7 +59,7 @@ class RubyTunes
       end
     end
 
-    def value(property); run "#{property} of #{reference}" end
+    def value(property); Script.run "#{property} of #{reference}" end
     alias_method :string, :value
     def integer(property); value(property).to_i end
     def float(property); value(property).to_f end
