@@ -52,11 +52,19 @@ class RubyTunes
     def type; self.class.type end
 
     def properties
-      properties = {}
-      self.class.properties.each do |key, value|
-        properties[key] = self.send(key)
-      end
-      properties
+      @properties ||= (
+        raw = {}
+        Script.run("get properties of #{reference}").split(', ').each do |property|
+          key, value = property.split(':',2)
+          raw[key] = value
+        end
+        properties = {}
+        self.class.properties.each do |key, value|
+          properties[key] = raw[value.name]
+        end
+        properties[:id] = self.id
+        properties
+      )
     end
 
   private
