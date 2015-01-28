@@ -29,6 +29,12 @@ class RubyTunes
         ).split(', ').map { |id| self.new(id: id) }
       end
 
+      def all
+        Script.run(
+          'persistent id of tracks'
+        ).split(', ').map { |id| self.new(id: id) }
+      end
+
     end
 
     def play; playback.play(self) end
